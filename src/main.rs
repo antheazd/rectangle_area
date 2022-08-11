@@ -3,7 +3,12 @@ use std::io;
 struct Rectangle{
     width: f32,
     length: f32,
-
+}
+//method that calculates rectangle surface
+impl Rectangle{
+    fn calculate_area(&self)-> f32 {
+        self.length*self.width
+}
 }
 fn main() {
 
@@ -35,10 +40,7 @@ fn main() {
         length: string2.trim().parse().unwrap(),
     };
 
-    println!("Rectangle area equals {}", calculate_area(&rectangle1));
+    println!("Rectangle area equals {}", rectangle1.calculate_area());
 }}
 
-//function that calculates rectangle surface
-fn calculate_area(rectangle: &Rectangle)-> f32 {
-    rectangle.length*rectangle.width
-}
+
