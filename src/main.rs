@@ -12,6 +12,7 @@ impl Rectangle{
 }
 fn main() {
 
+    //scanning how many calculations(n) will be performed
     let mut string0 = String::new();
     println!("How many inputs do you want to have?");  
     io::stdin()
@@ -20,26 +21,28 @@ fn main() {
     
     let number_of_iterations: u32 = string0.trim().parse().expect("Invalid input");
     
+    //iterating to get n number of inputs
     for iterator in 0..number_of_iterations {
 
-    let mut string1 = String::new();
-    let mut string2 = String::new();
+        let mut string1 = String::new();
+        let mut string2 = String::new();
 
-    println!("How wide is the rectange?");  
-    io::stdin()
-    .read_line(&mut string1)
-    .expect("Invalid input");
+        println!("How wide is the rectange?");  
+        io::stdin()
+                .read_line(&mut string1)
+                .expect("Invalid input");
 
-    println!("How long is the rectange?");
-    io::stdin()
-    .read_line(&mut string2)
-    .expect("Invalid input");
+        println!("How long is the rectange?");
+        io::stdin()
+                .read_line(&mut string2)
+                .expect("Invalid input");
 
-    let rectangle1 = Rectangle{
+        let rectangle1 = Rectangle{
         width: string1.trim().parse().unwrap(),
         length: string2.trim().parse().unwrap(),
     };
 
+    //printing rectangle area in the terminal
     println!("Rectangle area equals {}", rectangle1.calculate_area());
 }}
 
